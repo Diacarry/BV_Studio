@@ -14,8 +14,11 @@ class CreateIndividualsTable extends Migration
     public function up()
     {
         Schema::create('individuals', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('email', 255)->unique(); /* require */
             $table->timestamps();
+
+            $table->string('first_name', 255); /* require */
+            $table->string('last_name', 255); /* require */
         });
     }
 
