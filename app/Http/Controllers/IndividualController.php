@@ -27,7 +27,7 @@ class IndividualController extends Controller
      */
     public function create()
     {
-        //
+        return view('individual.register');
     }
 
     /**
@@ -38,7 +38,17 @@ class IndividualController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'email'         => 'email:rfc|required|min:8|max:50',
+            'first_name'    => 'required|min:8|max:255',
+            'last_name'     => 'required|min:8|max:255'
+        ]);
+        $report = new Individual;
+        $report->email = $request->get('email');
+        $report->first_name = $request->get('first_name');
+        $report->last_name = $request->get('last_name');
+        $report->save();
+        return redirect('personal');
     }
 
     /**

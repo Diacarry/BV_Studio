@@ -9,7 +9,7 @@
                 <h2>@lang('sentences.individualTitleA')</h2>
             </div>
             <div class="card-body">
-            <p><a href="companies/create" class="btn btn-success">@lang('sentences.individualButtonCreate')</a></p>
+            <p><a href="personal/create" class="btn btn-success">@lang('sentences.individualButtonCreate')</a></p>
                 <div class="card">
                     <div class="card-header">@lang('sentences.individualTitleB')</div>
                     <div class="card-body">
@@ -30,7 +30,12 @@
                                         <td>{{ $info->first_name }}</td>
                                         <td>{{ $info->last_name }}</td>
                                         <td><a href="/personal/{{ $info->email }}/edit" class="btn btn-warning"></a></td>
-                                        <td>eliminar
+                                        <td>
+                                            <form action="/personal/{{ $info->email }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger"></button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
