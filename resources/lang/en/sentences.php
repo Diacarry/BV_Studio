@@ -4,9 +4,12 @@ return [
 
     'warningA' => 'NO INDIVIDUALS REGISTERED',
 
+    'tableButtonEdit' => 'Edit',
+    'tableButtonDelete' => 'Delete',
+
     'tableEmail' => 'E-mail',
     'tableFirstName' => 'First Name',
-    'tableLastname' => 'Lasta Name',
+    'tableLastName' => 'Last Name',
 
     'individualTitleA' => 'Individuals',
     'individualTitleB' => 'Individuals List ',

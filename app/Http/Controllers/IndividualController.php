@@ -14,7 +14,10 @@ class IndividualController extends Controller
      */
     public function index()
     {
-        //
+        $data = Individual::all();
+        return view('individual.index', [
+            'data' => $data
+        ]);
     }
 
     /**

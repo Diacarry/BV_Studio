@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'ShowPage');
+
+Route::resource('/personal', 'IndividualController');
