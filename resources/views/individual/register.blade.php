@@ -33,6 +33,12 @@
                 <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Carranza Rivera" value="{{ old('last_name') }}">
             </div>
         </div>
+        <div class="form-group">
+            <label for="captcha">Captcha</label>
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+        </div>
         <button type="submit" class="btn btn-primary">@lang('sentences.generalButtonRegister')</button>
     </form>
 @endsection

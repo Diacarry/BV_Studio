@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Individual;
 use Illuminate\Http\Request;
+use Validator,Redirect,Response;
 
 class IndividualController extends Controller
 {
@@ -41,7 +42,8 @@ class IndividualController extends Controller
         $validatedData = $request->validate([
             'email'         => 'email:rfc|required|min:8|max:50',
             'first_name'    => 'required|min:8|max:255',
-            'last_name'     => 'required|min:8|max:255'
+            'last_name'     => 'required|min:8|max:255',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
         $report = new Individual;
         $report->email = $request->get('email');

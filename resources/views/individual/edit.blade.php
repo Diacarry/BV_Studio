@@ -30,6 +30,12 @@
             <label for="last_name">@lang('sentences.individualFormLabelC')</label>
             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Rarranza Rivera" value="{{ $data->last_name }}">
         </div>
+        <div class="form-group">
+            <label for="captcha">Captcha</label>
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+        </div>
         <button type="submit" class="btn btn-success">@lang('sentences.generalButtonUpdate')</button>
     </form>
 @endsection
