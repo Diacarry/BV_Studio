@@ -10,6 +10,9 @@ It is required to install the packages
 
 install 'npm' if the tool is not available
 
+Some packages must be installed for the correct display of the authentication forms, run command
+npm run dev
+
 After creating the database, all you have to do is execute the migrations with the command:
 php artisan migrate
 
