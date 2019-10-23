@@ -13,7 +13,11 @@
 
 Route::get('/', 'ShowPage');
 
-Route::resource('/personal', 'IndividualController');
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('/personal', 'IndividualController');
+
+});
 
 Auth::routes();
 

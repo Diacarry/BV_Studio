@@ -4,9 +4,14 @@
 @endsection
 @section('content')
     <div class="flex-center position-ref full-height"><br>
-        <div class="text-right">
-            <a href="/" class="btn btn-outline-danger">@lang('sentences.generalButtonBack')</a>
-        </div>
+        @if (Route::has('login'))
+            <div class="text-right">
+                @auth
+                    <a href="{{ url('/') }}" class="btn btn-outline-danger">@lang('sentences.generalButtonMenu')</a>
+                    <a href="{{ url('/home') }}" class="btn btn-outline-secondary">@lang('sentences.generalButtonAccount')</a>
+                @endauth
+            </div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <h2>@lang('sentences.individualTitleA')</h2>

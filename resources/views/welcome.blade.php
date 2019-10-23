@@ -81,13 +81,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome
+                    @lang('sentences.menuTitle')
                 </div>
 
-                <div class="links">
-                    <a href="{{ route('personal.index') }}">Add Individual</a>
-                    <a href="{{ route('personal.create') }}">Individual List</a>
-                </div>
+                @auth
+                    <div class="links">
+                        <a href="{{ route('personal.index') }}">@lang('sentences.menuLinkA')</a>
+                        <a href="{{ route('personal.create') }}">@lang('sentences.menuLinkB')</a>
+                    </div>
+                @else
+                    <h2>To use the application you must log</h2>
+                @endauth
             </div>
         </div>
     </body>

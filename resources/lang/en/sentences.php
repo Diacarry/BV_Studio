@@ -6,6 +6,12 @@ return [
     'generalButtonUpdate'   => 'Update',
     'generalButtonBack'     => 'Back',
     'generalButtonMenu'     => 'Menu',
+    'generalButtonAccount'  => 'Account',
+
+    'menuTitle' => 'Welcome',
+    'menuLinkA' => 'Add Individual',
+    'menuLinkB' => 'Individual List',
+
     'warningA' => 'NO INDIVIDUALS REGISTERED',
 
     'tableButtonEdit'   => 'Edit',

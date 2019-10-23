@@ -4,10 +4,15 @@
 @endsection
 @section('content')
     <br>
-    <div class="text-right">
-        <a href="{{ route('personal.index') }}" class="btn btn-outline-warning">@lang('sentences.generalButtonBack')</a>
-        <a href="/" class="btn btn-outline-danger">@lang('sentences.generalButtonMenu')</a>
-    </div>
+    @if (Route::has('login'))
+        <div class="text-right">
+            @auth
+                <a href="{{ route('personal.index') }}" class="btn btn-outline-warning">@lang('sentences.generalButtonBack')</a>
+                <a href="{{ url('/') }}" class="btn btn-outline-danger">@lang('sentences.generalButtonMenu')</a>
+                <a href="{{ url('/home') }}" class="btn btn-outline-secondary">@lang('sentences.generalButtonAccount')</a>
+            @endauth
+        </div>
+    @endif
     <h2>@lang('sentences.individualTitleE')</h2>
     @if ($errors->any())
         <div class="alert alert-danger" role="alert">
