@@ -68,9 +68,12 @@ class IndividualController extends Controller
      * @param  \App\Individual  $individual
      * @return \Illuminate\Http\Response
      */
-    public function edit(Individual $individual)
+    public function edit($individual)
     {
-        //
+        $individual = Individual::find($individual);
+        return view('individual.edit', [
+            'data' => $individual
+        ]);
     }
 
     /**
@@ -80,9 +83,17 @@ class IndividualController extends Controller
      * @param  \App\Individual  $individual
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Individual $individual)
+    public function update(Request $request, $individual)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name'    => 'required|min:8|max:255',
+            'last_name'     => 'required|min:8|max:255'
+        ]);
+        $report = Individual::find($individual);
+        $report->first_name = $request->get('first_name');
+        $report->last_name = $request->get('last_name');
+        $report->save();
+        return redirect('personal');
     }
 
     /**
