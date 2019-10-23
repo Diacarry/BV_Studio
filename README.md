@@ -13,6 +13,14 @@ install 'npm' if the tool is not available
 Some packages must be installed for the correct display of the authentication forms, run command
 npm run dev
 
+To use the application you must be registered in the database, you can register yourself in the registration form or execute the command
+php artisan db:seed --class=UsersTableSeeder
+
+This command registers a user admin with the following information
+- email     -> admin@admin.com
+- name      -> Andres Carranza
+- password  -> password
+
 After creating the database, all you have to do is execute the migrations with the command:
 php artisan migrate
 
