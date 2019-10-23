@@ -91,8 +91,10 @@ class IndividualController extends Controller
      * @param  \App\Individual  $individual
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Individual $individual)
+    public function destroy($individual)
     {
-        //
+        $registro = Individual::find($individual);
+        $registro->delete();
+        return redirect('personal');
     }
 }
