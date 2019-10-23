@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Individual extends Model
 {
-    
     /**
      * The table associated with the model.
      *

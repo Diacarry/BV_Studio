@@ -89,7 +89,8 @@ class IndividualController extends Controller
     {
         $validatedData = $request->validate([
             'first_name'    => 'required|min:8|max:255',
-            'last_name'     => 'required|min:8|max:255'
+            'last_name'     => 'required|min:8|max:255',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
         $report = Individual::find($individual);
         $report->first_name = $request->get('first_name');

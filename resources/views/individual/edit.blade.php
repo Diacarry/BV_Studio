@@ -3,7 +3,12 @@
     Edit Individual
 @endsection
 @section('content')
-    <br><h2>@lang('sentences.individualTitleE')</h2>
+    <br>
+    <div class="text-right">
+        <a href="{{ route('personal.index') }}" class="btn btn-outline-warning">@lang('sentences.generalButtonBack')</a>
+        <a href="/" class="btn btn-outline-danger">@lang('sentences.generalButtonMenu')</a>
+    </div>
+    <h2>@lang('sentences.individualTitleE')</h2>
     @if ($errors->any())
         <div class="alert alert-danger" role="alert">
             <ul>

@@ -4,6 +4,9 @@
 @endsection
 @section('content')
     <div class="flex-center position-ref full-height"><br>
+        <div class="text-right">
+            <a href="/" class="btn btn-outline-danger">@lang('sentences.generalButtonBack')</a>
+        </div>
         <div class="card">
             <div class="card-header">
                 <h2>@lang('sentences.individualTitleA')</h2>
