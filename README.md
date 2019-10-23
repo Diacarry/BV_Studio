@@ -1,5 +1,6 @@
 # BV_Studio
 Project created using the laravel framework
+<<<<<<< HEAD
 
 You must copy the information from the file (.env.example) to the file (.env)
 
@@ -31,3 +32,5 @@ INSERT INTO personal.individuals (email, created_at, updated_at, first_name, las
 INSERT INTO personal.individuals (email,first_name, last_name) VALUES ('value', 'value', 'value');
 
 Or if you prefer, register information through the application
+=======
+>>>>>>> f2adcfa1c55e84b7587aa8b921f8a61f7501141a
