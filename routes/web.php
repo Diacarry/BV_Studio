@@ -14,3 +14,7 @@
 Route::get('/', 'ShowPage');
 
 Route::resource('/personal', 'IndividualController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
