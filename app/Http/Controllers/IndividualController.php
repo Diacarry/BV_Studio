@@ -15,7 +15,7 @@ class IndividualController extends Controller
      */
     public function index()
     {
-        $data = Individual::all();
+        $data = Individual::paginate(5);
         return view('individual.index', [
             'data' => $data
         ]);
